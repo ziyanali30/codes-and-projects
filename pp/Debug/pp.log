@@ -1,0 +1,25 @@
+﻿Build started 1/28/2023 4:52:04 PM.
+     1>Project "C:\Users\Mg\Desktop\pp\pp\pp.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt delthwrecord.cpp fwrecord.cpp main.cpp showrecord.cpp thWrecordcpp.cpp threeWheeler.cpp thwSearchreacord.cpp twrecord.cpp
+         twrecord.cpp
+     1>c1xx : fatal error C1083: Cannot open source file: 'twrecord.cpp': No such file or directory
+         thwSearchreacord.cpp
+     1>c1xx : fatal error C1083: Cannot open source file: 'thwSearchreacord.cpp': No such file or directory
+         threeWheeler.cpp
+         thWrecordcpp.cpp
+     1>c1xx : fatal error C1083: Cannot open source file: 'thWrecordcpp.cpp': No such file or directory
+         showrecord.cpp
+     1>c:\users\mg\desktop\pp\pp\showrecord.cpp(1): fatal error C1083: Cannot open include file: 'ShowRecod.h': No such file or directory
+         main.cpp
+     1>c:\users\mg\desktop\pp\pp\file.h(5): fatal error C1083: Cannot open include file: 'ShowRecod.h': No such file or directory
+         fwrecord.cpp
+     1>c1xx : fatal error C1083: Cannot open source file: 'fwrecord.cpp': No such file or directory
+         delthwrecord.cpp
+     1>c:\users\mg\desktop\pp\pp\delthwrecord.h(4): fatal error C1083: Cannot open include file: 'ThwSearchRecod.h': No such file or directory
+         Generating Code...
+     1>Done Building Project "C:\Users\Mg\Desktop\pp\pp\pp.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:02.89
