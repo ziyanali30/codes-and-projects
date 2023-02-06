@@ -15,7 +15,6 @@ int main()
     char user;
     do
     {
-        cout << "HELLO" << endl;
         cout << "Enter Desired option \nPress 1 for all sender Details \n Press 2 for all Receiver Details\n Press 3 to Print Whole labels\n Press 4 to get total cost\n Currently there are 2 Customers in the system Press 5 to search single records \n press The corresponding Number to print the whole label for them = ";
         cin >> option;
         system("CLS");
