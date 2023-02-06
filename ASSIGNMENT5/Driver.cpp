@@ -10,7 +10,7 @@ int main()
     ptr[0] = new TwoDayPackage("Ziyan Ali", "Example Address 1", "Lahore", "Punjab", 54000, 15, 2, "Ahmed Bilal",
                                "I8 house 345", "Islamabad", "Capital", 5467, 200);
     ptr[1] = new OverNightPackage("Ali amjad", "Example Sender", "Faisalabad", "Punjab", 5678, 250, 3, "Haider Shafiq", "Example street", "Lahore", "Punjab", 54000, 3);
-    int total_cost = 0, totalcust = 2;
+    int total_cost = 0, totalcust = 2; // this is just an example in real; program an array would be creating by taking size from user
     int option;
     char user;
     do
