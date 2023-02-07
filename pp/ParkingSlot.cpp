@@ -1,7 +1,6 @@
 #include "ParkingSlot.h"
 
-
-ParkingSlot::ParkingSlot() :Customer()
+ParkingSlot::ParkingSlot() : Customer()
 {
 	e_day = 0;
 	e_month = 0;
@@ -10,7 +9,7 @@ ParkingSlot::ParkingSlot() :Customer()
 	E_month = 0;
 	E_year = 0;
 }
-ParkingSlot::ParkingSlot(int id, string name, string add, string email, int e_day, int e_month, int e_year, int E_day, int E_month, int E_year) :Customer(id, name, add, email)
+ParkingSlot::ParkingSlot(int id, string name, string add, string email, int e_day, int e_month, int e_year, int E_day, int E_month, int E_year) : Customer(id, name, add, email)
 {
 	this->e_day = e_day;
 	this->e_month = e_month;
@@ -24,11 +23,11 @@ void ParkingSlot::Input()
 {
 
 	Customer::AddCustomer();
-	cout << " Enter Enterence date :";
+	cout << " Enter Entrance date :";
 	cin >> e_day;
-	cout << " Enter Enterenc month :";
+	cout << " Enter Entrance month :";
 	cin >> e_month;
-	cout << " Enter Enterence Year :";
+	cout << " Enter Entrance Year :";
 	cin >> e_year;
 	cout << " Enter Exit date :";
 	cin >> E_day;
@@ -36,7 +35,6 @@ void ParkingSlot::Input()
 	cin >> E_month;
 	cout << " Enter Exit year :";
 	cin >> E_year;
-
 }
 
 void ParkingSlot::Book()
@@ -75,9 +73,7 @@ void ParkingSlot::displayDuration()
 	cout << " Duration :" << Duration << endl;
 	int amount = calDuration() * 100;
 	cout << " Total amount to be paid: " << amount << endl;
-
 }
 ParkingSlot::~ParkingSlot()
 {
-
 }

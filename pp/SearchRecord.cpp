@@ -1,12 +1,10 @@
 #include "SearchRecord.h"
 
-
-SearchRecord::SearchRecord() :Customer()
+SearchRecord::SearchRecord() : Customer()
 {
 }
 SearchRecord::SearchRecord(int id, string name, string add, string email) : Customer(id, name, add, email)
 {
-
 }
 int SearchRecord::searchRecord()
 {
@@ -21,20 +19,21 @@ int SearchRecord::searchRecord()
 	}
 	else
 	{
-		fin >> ID;
-		//cout << "ID :" << ID << endl;
-		fin.ignore();
-		fin >> Name;
-		//cout << "Name: " << Name << endl;
-		fin.ignore();
-		fin >> Address;
-		//cout << "Address :" << Address << endl;
-		fin.ignore();
-		fin >> Email;
+
 		while (!fin.eof())
 		{
+			// fin >> ID;
+			// // cout << "ID :" << ID << endl;
+			// fin.ignore();
+			// fin >> Name;
+			// // cout << "Name: " << Name << endl;
+			// fin.ignore();
+			// fin >> Address;
+			// // cout << "Address :" << Address << endl;
+			// fin.ignore();
+			// fin >> Email;
 
-			//cout << "Email: " << Email << endl;
+			// cout << "Email: " << Email << endl;
 			if (id == ID)
 			{
 				cout << " ID :" << ID << endl;
@@ -44,24 +43,22 @@ int SearchRecord::searchRecord()
 				return id;
 			}
 			fin >> ID;
-			//cout << "ID :" << ID << endl;
+			// cout << "ID :" << ID << endl;
 			fin.ignore();
 			fin >> Name;
-			//cout << "Name: " << Name << endl;
+			// cout << "Name: " << Name << endl;
 			fin.ignore();
 			fin >> Address;
-			//cout << "Address :" << Address << endl;
+			// cout << "Address :" << Address << endl;
 			fin.ignore();
 			fin >> Email;
 			fin.close();
-
 		}
 		if (id != ID)
 		{
 			cout << " Record not found " << endl;
 		}
 	}
-
 }
 
 SearchRecord::~SearchRecord()

@@ -1,13 +1,12 @@
 #include "TwoWheeler.h"
 
-//int Vehicle::Count = 0;
-//int Vehicle::Two = 0;
-TwoWheeler::TwoWheeler() :Vehicle()
+// int Vehicle::Count = 0;
+// int Vehicle::Two = 0;
+TwoWheeler::TwoWheeler() : Vehicle()
 {
 }
 TwoWheeler::TwoWheeler(int am, int cn, int tw, int thw, int fw, int fs, int pn, int h) : Vehicle(am, cn, tw, thw, fw, fs, pn, h)
 {
-
 }
 void TwoWheeler::T_wh()
 {
@@ -23,16 +22,16 @@ void TwoWheeler::T_wh()
 		{
 			Amount = 50 * hours;
 			cout << " A new TwoWheeler has parked <<>>" << endl;
-			//cout << "Total numbers of vehicles " << Count << endl;
+			// cout << "Total numbers of vehicles " << Count << endl;
 		}
-		else if (FreeSpce<0)
+		else if (FreeSpce < 0)
 		{
 			cout << " Parking is full!!!!!";
+			break;
 		}
 		cout << " You want to park more vheciles ";
 		cin >> again;
 	}
-
 }
 void TwoWheeler::display2()
 {
@@ -52,7 +51,7 @@ void TwoWheeler::display2()
 		fout << Amount << endl;
 	}
 }
-void  TwoWheeler::display()
+void TwoWheeler::display()
 {
 	cout << "Total numbers of vehicles :" << Vehicle::Count << endl;
 	cout << " Free Spaces left :" << FreeSpce << endl;
