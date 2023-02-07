@@ -23,7 +23,7 @@ int main()
 		else
 		{
 			flag = false;
-			cout << " Login unsuccessfull!!" << endl;
+			cout << " Login unsuccessful!!" << endl;
 			break;
 		}
 		char again = 'Y';
@@ -33,7 +33,7 @@ int main()
 			cout << "**********************************************************************" << endl;
 			cout << "*                                                                    *" << endl;
 			cout << "*                                                                    *" << endl;
-			cout << "*                       WECLOME TO PARKING SYSTEM                    *" << endl;
+			cout << "*                       WELCOME TO PARKING SYSTEM                    *" << endl;
 			cout << "*                                                                    *" << endl;
 			cout << "*                                                                    *" << endl;
 			cout << "**********************************************************************" << endl;
