@@ -1,12 +1,10 @@
 #include "DeleteRecord.h"
 
-
 DeleteRecord::DeleteRecord()
 {
 }
-DeleteRecord::DeleteRecord(int id, string name, string add, string email) :SearchRecord(id, name, add, email)
+DeleteRecord::DeleteRecord(int id, string name, string add, string email) : SearchRecord(id, name, add, email)
 {
-
 }
 void DeleteRecord::deleteRecord()
 {
@@ -21,15 +19,19 @@ void DeleteRecord::deleteRecord()
 		ifstream fin;
 		tempFile.open("tempFile.txt", ios::out);
 		fin.open("Customer.txt", ios::in);
-		fin >> ID;
-		fin.ignore();
-		fin >> Name;
-		fin.ignore();
-		fin >> Address;
-		fin.ignore();
-		fin >> Email;
 		while (!fin.eof())
 		{
+			fin >> ID;
+			// cout << "ID :" << ID << endl;
+			fin.ignore();
+			fin >> Name;
+			// cout << "Name: " << Name << endl;
+			fin.ignore();
+			fin >> Address;
+			// cout << "Address :" << Address << endl;
+			fin.ignore();
+			fin >> Email;
+			fin.close();
 			if (id != ID)
 			{
 				tempFile << ID << endl;
@@ -37,13 +39,6 @@ void DeleteRecord::deleteRecord()
 				tempFile << Address << endl;
 				tempFile << Email << endl;
 			}
-			fin >> ID;
-			fin.ignore();
-			fin >> Name;
-			fin.ignore();
-			fin >> Address;
-			fin.ignore();
-			fin >> Email;
 		}
 		fin.close();
 		tempFile.close();

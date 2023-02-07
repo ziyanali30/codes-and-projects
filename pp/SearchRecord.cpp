@@ -22,18 +22,14 @@ int SearchRecord::searchRecord()
 
 		while (!fin.eof())
 		{
-			// fin >> ID;
-			// // cout << "ID :" << ID << endl;
-			// fin.ignore();
-			// fin >> Name;
-			// // cout << "Name: " << Name << endl;
-			// fin.ignore();
-			// fin >> Address;
-			// // cout << "Address :" << Address << endl;
-			// fin.ignore();
-			// fin >> Email;
-
-			// cout << "Email: " << Email << endl;
+			fin >> ID;
+			// cout << "ID :" << ID << endl;
+			fin.ignore();
+			getline(fin, Name);
+			getline(fin, Address);
+			// cout << "Address :" << Address << endl;
+			getline(fin, Email);
+			fin.close();
 			if (id == ID)
 			{
 				cout << " ID :" << ID << endl;
@@ -42,17 +38,6 @@ int SearchRecord::searchRecord()
 				cout << " Email :" << Email << endl;
 				return id;
 			}
-			fin >> ID;
-			// cout << "ID :" << ID << endl;
-			fin.ignore();
-			fin >> Name;
-			// cout << "Name: " << Name << endl;
-			fin.ignore();
-			fin >> Address;
-			// cout << "Address :" << Address << endl;
-			fin.ignore();
-			fin >> Email;
-			fin.close();
 		}
 		if (id != ID)
 		{

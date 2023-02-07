@@ -1,13 +1,11 @@
 #include "SearchBooking.h"
 
-
 SearchBooking::SearchBooking()
 {
 }
 
-SearchBooking::SearchBooking(int id, string name, string add, string email, int e_day, int e_month, int e_year, int E_day, int E_month, int E_year) :ParkingSlot(id, name, add, email, e_day, e_month, e_year, E_day, E_month, E_year)
+SearchBooking::SearchBooking(int id, string name, string add, string email, int e_day, int e_month, int e_year, int E_day, int E_month, int E_year) : ParkingSlot(id, name, add, email, e_day, e_month, e_year, E_day, E_month, E_year)
 {
-
 }
 int SearchBooking::searchBooking()
 {
@@ -22,24 +20,10 @@ int SearchBooking::searchBooking()
 	}
 	else
 	{
-		fin >> ID;
-		fin.ignore();
-		fin >> Name;
-		fin.ignore();
-		fin >> Address;
-		fin.ignore();
-		fin >> Email;
-		fin.ignore();
-		fin >> e_day;
-		fin >> e_month;
-		fin >> e_year;
-		fin >> E_day;
-		fin >> E_month;
-		fin >> E_year;
-		while (!fin.eof())
+		while (fin >> ID)
 		{
 
-			//cout << "Email: " << Email << endl;
+			// cout << "Email: " << Email << endl;
 			if (id == ID)
 			{
 				cout << " ID :" << ID << endl;
@@ -54,13 +38,10 @@ int SearchBooking::searchBooking()
 				cout << "Exit Year :" << E_year << endl;
 				return id;
 			}
-			fin >> ID;
 			fin.ignore();
-			fin >> Name;
-			fin.ignore();
-			fin >> Address;
-			fin.ignore();
-			fin >> Email;
+			getline(fin, Name);
+			getline(fin, Address);
+			getline(fin, Email);
 			fin.ignore();
 			fin >> e_day;
 			fin >> e_month;
@@ -68,12 +49,8 @@ int SearchBooking::searchBooking()
 			fin >> E_day;
 			fin >> E_month;
 			fin >> E_year;
-			fin.close();
 		}
-		if (id != ID)
-		{
-			cout << " Record not found!!!! " << endl;
-		}
+		fin.close();
 	}
 }
 

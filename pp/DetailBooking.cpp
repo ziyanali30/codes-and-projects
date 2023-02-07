@@ -1,13 +1,11 @@
 #include "DetailBooking.h"
 
-
 DetailBooking::DetailBooking()
 {
 }
 
 DetailBooking::DetailBooking(int, string, string, string, int, int, int, int, int, int)
 {
-
 }
 void DetailBooking::Showbooking()
 {
@@ -19,18 +17,16 @@ void DetailBooking::Showbooking()
 	}
 	else
 	{
-		while (!fin.eof())
+		while (fin >> ID)
 		{
-			fin >> ID;
+
 			cout << " ID :" << ID << endl;
 			fin.ignore();
-			fin >> Name;
+			getline(fin, Name);
 			cout << " Name: " << Name << endl;
-			fin.ignore();
-			fin >> Address;
+			getline(fin, Address);
 			cout << " Address :" << Address << endl;
-			fin.ignore();
-			fin >> Email;
+			getline(fin, Email);
 			cout << "Email: " << Email << endl;
 			fin.ignore();
 			fin >> e_day;
@@ -46,21 +42,6 @@ void DetailBooking::Showbooking()
 			fin >> E_year;
 			cout << " Exit year: " << E_year << endl;
 		}
-
-		fin >> ID;
-		fin.ignore();
-		fin >> Name;
-		fin.ignore();
-		fin >> Address;
-		fin.ignore();
-		fin >> Email;
-		fin >> e_day;
-		fin >> e_month;
-		fin >> e_year;
-		fin >> E_day;
-		fin >> E_month;
-		fin >> E_year;
-		fin.close();
 	}
 }
 
