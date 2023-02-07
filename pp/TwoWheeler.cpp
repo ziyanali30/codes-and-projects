@@ -29,7 +29,7 @@ void TwoWheeler::T_wh()
 			cout << " Parking is full!!!!!";
 			break;
 		}
-		cout << " You want to park more vheciles ";
+		cout << " You want to park more vehicles ";
 		cin >> again;
 	}
 }
@@ -55,7 +55,7 @@ void TwoWheeler::display()
 {
 	cout << "Total numbers of vehicles :" << Vehicle::Count << endl;
 	cout << " Free Spaces left :" << FreeSpce << endl;
-	cout << " Amount Colloected :" << Amount << endl;
+	cout << " Amount Collected :" << Amount << endl;
 }
 TwoWheeler::~TwoWheeler()
 {

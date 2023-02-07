@@ -22,15 +22,9 @@ void DeleteRecord::deleteRecord()
 		while (!fin.eof())
 		{
 			fin >> ID;
-			// cout << "ID :" << ID << endl;
-			fin.ignore();
-			fin >> Name;
-			// cout << "Name: " << Name << endl;
-			fin.ignore();
-			fin >> Address;
-			// cout << "Address :" << Address << endl;
-			fin.ignore();
-			fin >> Email;
+			getline(fin, Name);
+			getline(fin, Address);
+			getline(fin, Email);
 			fin.close();
 			if (id != ID)
 			{

@@ -1,7 +1,7 @@
 #pragma once
-#include<iostream>
-#include<string>
-#include<fstream>
+#include <iostream>
+#include <string>
+#include <fstream>
 using namespace std;
 class Vehicle
 {
@@ -9,6 +9,7 @@ protected:
 	int Amount, PlateNo, hours;
 	static int Count, FreeSpce;
 	static int Two, Three, Four;
+
 public:
 	Vehicle();
 	Vehicle(int, int, int, int, int, int, int, int);
@@ -30,6 +31,5 @@ public:
 	int getF_w();
 	virtual void display() = 0;
 	virtual void display2() = 0;
-	~Vehicle();
+	virtual ~Vehicle();
 };
-
