@@ -22,11 +22,11 @@ void DeleteRecord::deleteRecord()
 		while (!fin.eof())
 		{
 			fin >> ID;
+			fin.ignore();
 			getline(fin, Name);
 			getline(fin, Address);
 			getline(fin, Email);
-			fin.close();
-			if (id != ID)
+			if (ID != id)
 			{
 				tempFile << ID << endl;
 				tempFile << Name << endl;

@@ -1,8 +1,8 @@
 #pragma once
-#include<iostream>
-#include<cstring>
-#include<string>
-#include<fstream>
+#include <iostream>
+#include <cstring>
+#include <string>
+#include <fstream>
 using namespace std;
 class Customer
 {
@@ -11,10 +11,11 @@ protected:
 	string Name;
 	string Address;
 	string Email;
+
 public:
 	Customer();
 	Customer(int, string, string, string);
-	//void deepCopy(char*&,const char*);
+	// void deepCopy(char*&,const char*);
 	void setID(int);
 	void setName(string);
 	void setAddress(string);
@@ -29,4 +30,3 @@ public:
 	void showRecord();
 	~Customer();
 };
-
