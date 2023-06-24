@@ -1,9 +1,14 @@
 #include <iostream>
+#include "string"
 using namespace std;
-template <class T>
 class node
 {
-    T data;
+    int data;
+    string author;
+    string bookname;
+    string category;
+    bool reserved;
+    string issued_to;
     node *next;
 
 public:
@@ -11,17 +16,67 @@ public:
     {
         data = NULL;
         next = NULL;
+        author = '\0';
+        bookname = '\0';
+        category = '\0';
+        reserved = false;
+        issued_to = '\0';
     }
-    node(T dummy)
+    node(int dummy, string auth, string title, string category, bool reserve, string issued)
     {
+        author = auth;
+        bookname = title;
+        this->category = category;
+        reserved = reserve;
+        issued_to = issued;
         this->data = dummy;
         this->next = NULL;
     }
-    void setdata(T data)
+    void setauthor(string auth)
+    {
+        this->author = auth;
+    }
+    void setbookname(string bookname)
+    {
+        this->bookname = bookname;
+    }
+    void setcategory(string category)
+    {
+        this->category = category;
+    }
+    void setissuedto(string issuedto)
+    {
+        this->issued_to = issuedto;
+    }
+    void publishedyear(int year)
+    {
+        this->data = year;
+    }
+    int getyear()
+    {
+        return this->data;
+    }
+    string getbookname()
+    {
+        return this->bookname;
+    }
+    string getcategory(string cat)
+    {
+        this->category = cat;
+    }
+    string getissuestatus()
+    {
+        return issued_to;
+    }
+    bool getreservestatus()
+    {
+        return reserved;
+    }
+    void setdata(int data)
     {
         this->data = data;
     }
-    T getdata()
+    int getdata()
     {
         return data;
     }
@@ -32,5 +87,21 @@ public:
     node *getnext()
     {
         return this->next;
+    }
+    void display()
+    {
+        cout << "Book Title : " << bookname << endl;
+        cout << "Author Name : " << author << endl;
+        cout << "Category : " << category << endl;
+        if (reserved)
+        {
+            cout << "Reserve status: Reserved";
+            cout << "Issued by " << issued_to << endl;
+        }
+        else
+        {
+            cout << "Reserve status : Available " << endl;
+        }
+        cout << "Publish year" << data << endl;
     }
 };
