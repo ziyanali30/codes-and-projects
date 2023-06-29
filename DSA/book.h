@@ -30,4 +30,32 @@ public:
             temp->setnext(N);
         }
     }
+    bool deletebook(string bookname)
+    {
+        if (head == NULL)
+        {
+            cout << "List is empty" << endl;
+            return false;
+        }
+        else
+        {
+            node *temp = head;
+            node *prev = head;
+            temp = temp->getnext();
+            while (temp != NULL)
+            {
+                if (temp->getbookname() == bookname)
+                {
+                    prev->setnext(temp->getnext());
+                    return true;
+                }
+                else
+                {
+                    temp = temp->getnext();
+                    prev = prev->getnext();
+                }
+            }
+            return false;
+        }
+    }
 };
