@@ -82,6 +82,7 @@ public:
         while (temp != NULL)
         {
             temp->display();
+            temp = temp->getnext();
         }
     }
 };

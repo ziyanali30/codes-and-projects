@@ -22,7 +22,7 @@ public:
         reserved = false;
         issued_to = '\0';
     }
-    node(int dummy, string auth, string title, string category, bool reserve = false, string issued = '\0')
+    node(int dummy, string auth, string title, string category, bool reserve = false, string issued = "\0")
     {
         author = auth;
         bookname = title;
@@ -96,7 +96,6 @@ public:
         if (reserved)
         {
             cout << "Reserve status: Reserved";
-            cout << "Issued by " << issued_to << endl;
         }
         else
         {
