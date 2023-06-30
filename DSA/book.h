@@ -12,7 +12,6 @@ public:
     void addbook(string name,
                  string authorname,
                  string catgeory,
-                 string issuedto,
                  int data)
     {
         node *N = new node(data, authorname, name, catgeory);
@@ -56,6 +55,33 @@ public:
                 }
             }
             return false;
+        }
+    }
+    bool searchBook(string book)
+    {
+        if (head == NULL)
+        {
+            return false;
+        }
+        else
+        {
+            node *temp = head;
+            while (temp != NULL)
+            {
+                if (temp->getbookname() == book)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+    }
+    void displaybooks()
+    {
+        node *temp = head;
+        while (temp != NULL)
+        {
+            temp->display();
         }
     }
 };
