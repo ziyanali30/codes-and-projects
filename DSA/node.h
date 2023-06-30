@@ -3,6 +3,7 @@
 using namespace std;
 class node
 {
+    static int id;
     int data;
     string author;
     string bookname;
@@ -14,7 +15,8 @@ class node
 public:
     node()
     {
-        data = NULL;
+        id++;
+        data = 0;
         next = NULL;
         author = '\0';
         bookname = '\0';
@@ -24,6 +26,7 @@ public:
     }
     node(int dummy, string auth, string title, string category, bool reserve = false, string issued = "\0")
     {
+        id++;
         author = auth;
         bookname = title;
         this->category = category;
@@ -66,7 +69,7 @@ public:
     }
     string getcategory(string cat)
     {
-        this->category = cat;
+        return category;
     }
     string getissuestatus()
     {
@@ -92,6 +95,10 @@ public:
     {
         return this->next;
     }
+    static int getid()
+    {
+        return id;
+    }
     void display()
     {
         cout << "Book Title : " << bookname << endl;
@@ -108,3 +115,4 @@ public:
         cout << "Publish year" << data << endl;
     }
 };
+int node::id = 0;
