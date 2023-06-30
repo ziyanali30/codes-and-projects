@@ -52,6 +52,10 @@ public:
     {
         this->data = year;
     }
+    void setreservestatus(bool res)
+    {
+        this->reserved = res;
+    }
     int getyear()
     {
         return this->data;
