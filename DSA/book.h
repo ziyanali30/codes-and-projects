@@ -92,16 +92,7 @@ public:
                 changed = true;
             }
         }
-        if (changed)
-        {
-            cout << "Book has been successfully reserved and issued " << endl;
-            return true;
-        }
-        else
-        {
-            cout << "Book was not issued" << endl;
-            return false;
-        }
+        return changed;
     }
     void reservedBooks()
     {
