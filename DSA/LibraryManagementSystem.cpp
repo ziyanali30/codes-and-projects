@@ -79,6 +79,11 @@ int main()
         {
             b.displaybooks();
         }
+        else if (user == 7)
+        {
+            cin.ignore();
+            b.searchByCategory();
+        }
         cout << "Do you want to perform more actions press n to end ";
         cin >> use;
     }

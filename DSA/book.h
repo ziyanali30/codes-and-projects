@@ -119,4 +119,27 @@ public:
             temp = temp->getnext();
         }
     }
+    void searchByCategory()
+    {
+        if (head == NULL)
+        {
+            cout << "No Books in the List" << endl;
+            return;
+        }
+        else
+        {
+            string category;
+            cout << "Enter the category you want to search";
+            getline(cin, category);
+            node *temp = head;
+            while (temp != NULL)
+            {
+                if (temp->getcategory() == category)
+                {
+                    temp->display();
+                }
+                temp = temp->getnext();
+            }
+        }
+    }
 };

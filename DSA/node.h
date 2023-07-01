@@ -3,7 +3,7 @@
 using namespace std;
 class node
 {
-    static int id;
+    int id = 0;
     int data;
     string author;
     string bookname;
@@ -67,7 +67,7 @@ public:
     {
         return this->bookname;
     }
-    string getcategory(string cat)
+    string getcategory()
     {
         return category;
     }
@@ -95,12 +95,13 @@ public:
     {
         return this->next;
     }
-    static int getid()
+    int getid()
     {
         return id;
     }
     void display()
     {
+        cout << "Book ID : " << id << endl;
         cout << "Book Title : " << bookname << endl;
         cout << "Author Name : " << author << endl;
         cout << "Category : " << category << endl;
@@ -115,4 +116,3 @@ public:
         cout << "Publish year" << data << endl;
     }
 };
-int node::id = 0;
