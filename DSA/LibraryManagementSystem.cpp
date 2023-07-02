@@ -12,8 +12,9 @@ int main()
     char use;
     b.addbook("Harry potter", "ziyan ali", "fiction", 2001);
     b.addbook("C++ Programming", "DS Malik", "Programming", 2000);
-    cout << "Enter user name";
+    cout << "Enter user name : ";
     getline(cin, username);
+    cout << "Enter Password : ";
     getline(cin, password);
     do
     {
@@ -53,6 +54,8 @@ int main()
                 cout << "To display all books press 6 \n";
                 cout << "To search by category Press 7 \n";
                 cout << "To Search by author press 8 \n";
+                cout << "To return a book press 9 \n\n";
+                cout << "To display All available books enter 10\n";
                 cin >> user;
                 if (user == 1)
                 {
@@ -73,17 +76,22 @@ int main()
                 }
                 else if (user == 2)
                 {
+                    cin.ignore();
                     string bookname;
                     cout << "Enter the name of the book you want to delete : ";
-                    cin >> bookname;
+                    getline(cin, bookname);
                     b.deletebook(bookname);
                 }
                 else if (user == 3)
                 {
+                    string name;
                     string bookname;
+                    cin.ignore();
                     cout << "Enter the name of the book you want to reserve : ";
-                    cin >> bookname;
-                    if (b.reservebook(bookname))
+                    getline(cin, bookname);
+                    cout << "Enter the name of the person issued to : ";
+                    getline(cin, name);
+                    if (b.reservebook(bookname, name))
                     {
                         cout << "Book was successfully reserved " << endl;
                     }
@@ -94,6 +102,7 @@ int main()
                 }
                 else if (user == 4)
                 {
+                    cin.ignore();
                     string bookname;
                     cout << "Enter the name of the book you want to search : ";
                     cin >> bookname;
@@ -108,10 +117,12 @@ int main()
                 }
                 else if (user == 5)
                 {
+                    cin.ignore();
                     b.reservedBooks();
                 }
                 else if (user == 6)
                 {
+                    cin.ignore();
                     b.displaybooks();
                 }
                 else if (user == 7)
@@ -123,6 +134,24 @@ int main()
                 {
                     cin.ignore();
                     b.searchByAuthor();
+                }
+                else if (user == 9)
+                {
+                    cin.ignore();
+                    string bookname;
+                    cout << "Enter the Book name";
+                    getline(cin, bookname);
+
+                    if (b.ReturnBook(bookname))
+                    {
+                        cout << "Book Returned" << endl;
+                    }
+                    else
+                        cout << "Book return not successful" << endl;
+                }
+                else if (user == 10)
+                {
+                    b.displayavailable();
                 }
             }
         }

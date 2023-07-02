@@ -72,16 +72,14 @@ public:
                 {
                     return true;
                 }
+                temp = temp->getnext();
             }
             return false;
         }
     }
-    bool reservebook(string bookname)
+    bool reservebook(string bookname, string name)
     {
         bool changed = false;
-        string name;
-        cout << "Enter the name of the person issued to : ";
-        getline(cin, name);
         node *temp = head;
         while (temp != NULL)
         {
@@ -91,6 +89,7 @@ public:
                 temp->setissuedto(name);
                 changed = true;
             }
+            temp = temp->getnext();
         }
         return changed;
     }
@@ -110,6 +109,7 @@ public:
         {
             cout << "There are no Books to display";
             cout << endl;
+            return;
         }
 
         node *temp = head;
@@ -117,6 +117,28 @@ public:
         {
             temp->display();
             temp = temp->getnext();
+        }
+    }
+    bool ReturnBook(string bookname)
+    {
+        if (head == NULL)
+        {
+            return false;
+        }
+        else
+        {
+            node *temp = head;
+            while (temp != NULL)
+            {
+                if (temp->getbookname() == bookname && temp->getreservestatus() == true)
+                {
+                    temp->setissuedto("\0");
+                    temp->setreservestatus(false);
+                    return true;
+                }
+                temp = temp->getnext();
+            }
+            return false;
         }
     }
     void searchByCategory()
@@ -163,6 +185,18 @@ public:
                 }
                 temp = temp->getnext();
             }
+        }
+    }
+    void displayavailable()
+    {
+        node *temp = head;
+        while (temp != NULL)
+        {
+            if (temp->getreservestatus() == false)
+            {
+                temp->display();
+            }
+            temp = temp->getnext();
         }
     }
 };
