@@ -1,6 +1,8 @@
 #include <iostream>
 #include "string"
 using namespace std;
+
+// Class definition for 'node'
 class node
 {
     int id = 0;
@@ -13,6 +15,7 @@ class node
     node *next;
 
 public:
+    // Default constructor
     node()
     {
         id++;
@@ -24,6 +27,8 @@ public:
         reserved = false;
         issued_to = '\0';
     }
+
+    // Parameterized constructor
     node(int dummy, string auth, string title, string category, bool reserve = false, string issued = "\0")
     {
         id++;
@@ -35,6 +40,8 @@ public:
         this->data = dummy;
         this->next = NULL;
     }
+
+    // Setter functions
     void setauthor(string auth)
     {
         this->author = auth;
@@ -59,6 +66,8 @@ public:
     {
         this->reserved = res;
     }
+
+    // Getter functions
     int getyear()
     {
         return this->data;
@@ -83,31 +92,36 @@ public:
     {
         return reserved;
     }
-    void setdata(int data)
-    {
-        this->data = data;
-    }
     int getdata()
     {
         return data;
-    }
-    void setnext(node *next)
-    {
-        this->next = next;
-    }
-    node *getnext()
-    {
-        return this->next;
     }
     int getid()
     {
         return id;
     }
+    node *getnext()
+    {
+        return this->next;
+    }
+
+    // Setter functions
+    void setdata(int data)
+    {
+        this->data = data;
+    }
+    void setnext(node *next)
+    {
+        this->next = next;
+    }
+
+    // Function to display the details of the node
     void display()
     {
         cout << "Book Title : " << bookname << endl;
         cout << "Author Name : " << author << endl;
         cout << "Category : " << category << endl;
+
         if (reserved)
         {
             cout << "Reserve status: Reserved ";
@@ -116,6 +130,7 @@ public:
         {
             cout << "Reserve status : Available " << endl;
         }
+
         cout << "Publish year : " << data << endl
              << endl;
     }

@@ -1,4 +1,5 @@
 #include "node.h"
+
 class book
 {
 private:
@@ -9,10 +10,9 @@ public:
     {
         head = NULL;
     }
-    void addbook(string name,
-                 string authorname,
-                 string catgeory,
-                 int data)
+
+    // Function to add a book to the list
+    void addbook(string name, string authorname, string catgeory, int data)
     {
         node *N = new node(data, authorname, name, catgeory);
         if (head == NULL)
@@ -29,6 +29,8 @@ public:
             temp->setnext(N);
         }
     }
+
+    // Function to delete a book from the list
     bool deletebook(string bookname)
     {
         if (head == NULL)
@@ -57,6 +59,8 @@ public:
             return false;
         }
     }
+
+    // Function to search for a book in the list
     bool searchBook(string book)
     {
         if (head == NULL)
@@ -77,6 +81,8 @@ public:
             return false;
         }
     }
+
+    // Function to reserve a book
     bool reservebook(string bookname, string name)
     {
         bool changed = false;
@@ -93,6 +99,8 @@ public:
         }
         return changed;
     }
+
+    // Function to display reserved books
     void reservedBooks()
     {
         node *temp = head;
@@ -103,6 +111,8 @@ public:
             temp = temp->getnext();
         }
     }
+
+    // Function to display all books
     void displaybooks()
     {
         if (head == NULL)
@@ -119,6 +129,8 @@ public:
             temp = temp->getnext();
         }
     }
+
+    // Function to return a book
     bool ReturnBook(string bookname)
     {
         if (head == NULL)
@@ -141,6 +153,8 @@ public:
             return false;
         }
     }
+
+    // Function to search books by category
     void searchByCategory()
     {
         if (head == NULL)
@@ -164,6 +178,8 @@ public:
             }
         }
     }
+
+    // Function to search books by author
     void searchByAuthor()
     {
         if (head == NULL)
@@ -187,6 +203,8 @@ public:
             }
         }
     }
+
+    // Function to display available books
     void displayavailable()
     {
         node *temp = head;
