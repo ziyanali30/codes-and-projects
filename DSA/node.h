@@ -63,6 +63,10 @@ public:
     {
         return this->data;
     }
+    string getauthor()
+    {
+        return author;
+    }
     string getbookname()
     {
         return this->bookname;
@@ -101,18 +105,18 @@ public:
     }
     void display()
     {
-        cout << "Book ID : " << id << endl;
         cout << "Book Title : " << bookname << endl;
         cout << "Author Name : " << author << endl;
         cout << "Category : " << category << endl;
         if (reserved)
         {
-            cout << "Reserve status: Reserved";
+            cout << "Reserve status: Reserved ";
         }
         else
         {
             cout << "Reserve status : Available " << endl;
         }
-        cout << "Publish year" << data << endl;
+        cout << "Publish year : " << data << endl
+             << endl;
     }
 };

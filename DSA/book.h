@@ -142,4 +142,27 @@ public:
             }
         }
     }
+    void searchByAuthor()
+    {
+        if (head == NULL)
+        {
+            cout << "Book list is empty" << endl;
+            return;
+        }
+        else
+        {
+            string author;
+            cout << "Enter the name of the author : ";
+            getline(cin, author);
+            node *temp = head;
+            while (temp != NULL)
+            {
+                if (temp->getauthor() == author)
+                {
+                    temp->display();
+                }
+                temp = temp->getnext();
+            }
+        }
+    }
 };
